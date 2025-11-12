@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" id="htmlRoot">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>7. External Resources · Shirley's Secret Tools</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#faf9f6; --surface:#fff; --text:#1a1a1a; --text-light:#555; --border:#e0e0e0; --hover:#d4c8b5; }
+    .dark { --bg:#121212; --surface:#1e1e1e; --text:#f0f0f0; --text-light:#aaa; --border:#333; --hover:#8a7c6a; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background-image: url("image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23000000' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
+      background-size: 200px;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255,45,117,0.01) 2px, transparent 3px),
+        radial-gradient(circle at 90% 80%, rgba(74, 108, 247,0.01) 2px, transparent 3px);
+      pointer-events: none;
+      z-index: -1;
+    }
+    header {
+      padding: 1.5rem 2.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .back {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .back:hover {
+      color: var(--hover);
+      text-decoration: underline;
+    }
+    .title-wrapper {
+      width: 100%;
+      text-align: center;
+      margin: 2.5rem auto 2rem;
+      max-width: 900px;
+      position: relative;
+    }
+    .title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .title-underline {
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 12px;
+      z-index: 0;
+    }
+    .section {
+      max-width: 900px;
+      margin: 0 auto 2.5rem;
+      padding: 0 2rem;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+      color: var(--text);
+    }
+    .tools {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+    .item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.3rem;
+      border-radius: 4px;
+      transition: all 0.25s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      position: relative;
+      overflow: hidden;
+    }
+    .dark .item {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .item::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,45,117,0.04), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.6s;
+      z-index: 0;
+    }
+    .item:hover::after {
+      transform: translateX(100%);
+    }
+    .item * {
+      position: relative;
+      z-index: 1;
+    }
+    .item:hover {
+      border-color: var(--hover);
+      transform: translateY(-2px);
+    }
+    .item a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: 500;
+      display: block;
+    }
+    @media (max-width: 768px) {
+      header { padding: 1.2rem; }
+      .title { font-size: 1.8rem; }
+      .tools { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/shirley-secret-tools/" class="back">← Back to Home</a>
+  </header>
+
+  <div class="title-wrapper">
+    <h1 class="title">7. External Resources · 源源很Ready</h1>
+    <svg class="title-underline" viewBox="0 0 200 20" preserveAspectRatio="none">
+      <path d="M0,15 Q50,5 100,15 T200,15" stroke="#ff2d75" fill="none" stroke-width="2" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">7.1. 看一看 (Watch)</h2>
+    <div class="tools">
+      <div class="item"><a href="http://thenostalgiamachine.com/" target="_blank">7.1.1 The Nostalgia Machine</a></div>
+      <div class="item"><a href="https://www.playphrase.me/search/english/" target="_blank">7.1.2 PlayPhrase Me</a></div>
+      <div class="item"><a href="https://tw.voicetube.com/" target="_blank">7.1.3 VoiceTube</a></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">7.2. 聽一聽 (Listen)</h2>
+    <div class="tools">
+      <div class="item"><a href="https://podcasts.apple.com/tw/search?term=voa%20learning%20english" target="_blank">7.2.1 VOA Learning English</a></div>
+      <div class="item"><a href="https://podcasts.apple.com/tw/podcast/6-minute-english/id262026947" target="_blank">7.2.2 BBC 6 Minutes English</a></div>
+      <div class="item"><a href="https://learnenglish.britishcouncil.org/skills/listening" target="_blank">7.2.3 British Council Listening</a></div>
+      <div class="item"><a href="https://test-english.com/listening/" target="_blank">7.2.4 Test English – Listening</a></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">7.3. 查一查 (Check it Up)</h2>
+    <div class="tools">
+      <div class="item"><a href="https://dictionary.cambridge.org/dictionary/english/" target="_blank">7.3.1 Cambridge E-E Dictionary</a></div>
+      <div class="item"><a href="https://dictionary.cambridge.org/dictionary/english-chinese-traditional/" target="_blank">7.3.2 Cambridge E-C Dictionary</a></div>
+      <div class="item"><a href="https://www.merriam-webster.com/" target="_blank">7.3.3 Merriam-Webster</a></div>
+      <div class="item"><a href="https://www.just-the-word.com/" target="_blank">7.3.4 Just the Word (Collocations)</a></div>
+      <div class="item"><a href="https://sentencechecker.com/" target="_blank">7.3.5 Sentence Checker</a></div>
+      <div class="item"><a href="https://quillbot.com/grammar-check" target="_blank">7.3.6 QuillBot Grammar</a></div>
+      <div class="item"><a href="https://www.grammarly.com/" target="_blank">7.3.7 Grammarly</a></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">7.4. 玩一玩 (Have Some Fun)</h2>
+    <div class="tools">
+      <div class="item"><a href="https://littlealchemy2.com/" target="_blank">7.4.1 Little Alchemy</a></div>
+      <div class="item"><a href="https://ereadinggames.com/idiom-unicorn/" target="_blank">7.4.2 Idiom Unicorn</a></div>
+      <div class="item"><a href="https://ereadinggames.com/context-clues-climber/" target="_blank">7.4.3 Context Clues Climber</a></div>
+    </div>
+  </div>
+
+  <script>
+    const html = document.getElementById('htmlRoot');
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') html.classList.add('dark');
+  </script>
+</body>
+</html>
