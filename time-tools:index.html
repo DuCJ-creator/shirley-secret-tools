@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" id="htmlRoot">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>2. Time Tools · Shirley's Secret Tools</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#faf9f6; --surface:#fff; --text:#1a1a1a; --text-light:#555; --border:#e0e0e0; --hover:#d4c8b5; }
+    .dark { --bg:#121212; --surface:#1e1e1e; --text:#f0f0f0; --text-light:#aaa; --border:#333; --hover:#8a7c6a; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23000000' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
+      background-size: 200px;
+    }
+    header { padding:1.5rem 2.5rem; max-width:900px; margin:0 auto; display:flex; }
+    .back { text-decoration:none; color:var(--text); font-size:1.1rem; }
+    .back:hover { text-decoration:underline; }
+    .title { font-family:'Cormorant Garamond',serif; text-align:center; margin:2.5rem auto 1.8rem; font-size:2rem; max-width:900px; }
+    .tools { max-width:900px; margin:0 auto; padding:0 2rem 2rem; }
+    .item { background:var(--surface); border:1px solid var(--border); padding:1.4rem; margin-bottom:1.2rem; border-radius:4px; transition:all 0.25s; }
+    .item:hover { border-color:var(--hover); transform:translateX(4px); }
+    .item a { text-decoration:none; color:inherit; font-weight:500; display:block; }
+    .dice-wrapper { text-align:center; margin-top:2rem; }
+    .shaking { animation: shake 0.5s infinite; }
+    @keyframes shake {
+      0%,100% { transform: rotateX(0) rotateY(0) rotateZ(0); }
+      10% { transform: rotateX(10deg) rotateY(10deg) rotateZ(5deg); }
+      20% { transform: rotateX(-10deg) rotateY(-10deg) rotateZ(-5deg); }
+      30% { transform: rotateX(15deg) rotateY(15deg) rotateZ(10deg); }
+      40% { transform: rotateX(-15deg) rotateY(-15deg) rotateZ(-10deg); }
+      50% { transform: rotateX(20deg) rotateY(20deg) rotateZ(15deg); }
+      60% { transform: rotateX(-20deg) rotateY(-20deg) rotateZ(-15deg); }
+      70% { transform: rotateX(15deg) rotateY(15deg) rotateZ(10deg); }
+      80% { transform: rotateX(-10deg) rotateY(-10deg) rotateZ(-5deg); }
+      90% { transform: rotateX(5deg) rotateY(5deg) rotateZ(2deg); }
+    }
+  </style>
+</head>
+<body>
+  <header><a href="../" class="back">← Back to Home</a></header>
+  <h1 class="title">2. Time Tools · 時時很Happy</h1>
+  <div class="tools">
+    <div class="item"><a href="https://ducj-creator.github.io/Shirley%20Timer.html">2.1 Shirley's Timer</a></div>
+    <div class="item"><a href="https://ducj-creator.github.io/Shirley%20Stop%20Watch.html">2.2 Shirley's Stop Watch</a></div>
+    <div class="item"><a href="#dice">2.3 Shirley's Dice Simulator</a></div>
+  </div>
+
+  <div class="dice-wrapper">
+    <h2 style="font-family:'Cormorant Garamond',serif;color:var(--text);">2.3 Shirley's Dice Simulator</h2>
+    <div style="display:flex;justify-content:center;">
+      <div style="padding:2rem;background:var(--surface);border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.1);max-width:400px;width:90%;">
+        <div class="dice-container" id="diceContainer" style="perspective:1000px;margin:2rem auto;width:150px;height:150px;cursor:pointer;">
+          <div class="dice" id="dice" style="width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform 0.5s ease;">
+            <div class="face" style="position:absolute;width:100%;height:100%;background:#FF5252;border:2px solid #333;border-radius:15px;display:flex;justify-content:center;align-items:center;transform:translateZ(75px);"><div style="width:25px;height:25px;background:#333;border-radius:50%;"></div></div>
+            <div class="face" style="position:absolute;width:100%;height:100%;background:#4CAF50;border:2px solid #333;border-radius:15px;transform:rotateY(90deg) translateZ(75px);"><div style="position:absolute;top:25%;left:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;bottom:25%;right:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div></div>
+            <div class="face" style="position:absolute;width:100%;height:100%;background:#2196F3;border:2px solid #333;border-radius:15px;transform:rotateX(90deg) translateZ(75px);"><div style="position:absolute;top:25%;left:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;bottom:25%;right:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div></div>
+            <div class="face" style="position:absolute;width:100%;height:100%;background:#FFC107;border:2px solid #333;border-radius:15px;transform:rotateX(-90deg) translateZ(75px);"><div style="position:absolute;top:25%;left:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;top:25%;right:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;bottom:25%;left:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;bottom:25%;right:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div></div>
+            <div class="face" style="position:absolute;width:100%;height:100%;background:#9C27B0;border:2px solid #333;border-radius:15px;transform:rotateY(-90deg) translateZ(75px);"><div style="position:absolute;top:25%;left:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;top:25%;right:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;bottom:25%;left:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;bottom:25%;right:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div></div>
+            <div class="face" style="position:absolute;width:100%;height:100%;background:#FF9800;border:2px solid #333;border-radius:15px;transform:rotateY(180deg) translateZ(75px);"><div style="position:absolute;top:25%;left:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;top:25%;right:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;top:50%;left:25%;transform:translateY(-50%);width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;top:50%;right:25%;transform:translateY(-50%);width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;bottom:25%;left:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;bottom:25%;right:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div></div>
+          </div>
+        </div>
+        <div class="result" id="result" style="font-size:1.4rem;margin-top:1.5rem;color:var(--text);">Click to roll</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dice = document.getElementById('dice');
+      const result = document.getElementById('result');
+      const container = document.getElementById('diceContainer');
+      let rolling = false;
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      function playSound() {
+        const o = ctx.createOscillator(), g = ctx.createGain();
+        o.connect(g); g.connect(ctx.destination);
+        o.type = 'sine'; o.frequency.setValueAtTime(440, ctx.currentTime);
+        o.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.1);
+        g.gain.setValueAtTime(0.3, ctx.currentTime);
+        g.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.2);
+        o.start(); o.stop(ctx.currentTime + 0.2);
+      }
+      container.addEventListener('click', () => {
+        if (rolling) return;
+        rolling = true;
+        result.textContent = "Rolling...";
+        dice.classList.add('shaking');
+        playSound();
+        setTimeout(() => {
+          const n = Math.floor(Math.random() * 6) + 1;
+          result.textContent = `Result: ${n}`;
+          dice.classList.remove('shaking');
+          dice.style.transform = ({
+            1: 'rotateX(0deg) rotateY(0deg)',
+            2: 'rotateY(-90deg)',
+            3: 'rotateX(-90deg)',
+            4: 'rotateX(90deg)',
+            5: 'rotateY(90deg)',
+            6: 'rotateY(180deg)'
+          })[n];
+          rolling = false;
+        }, 800);
+      });
+      dice.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    });
+  </script>
+</body>
+</html>
