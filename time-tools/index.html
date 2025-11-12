@@ -14,101 +14,316 @@
     body {
       background-color: var(--bg);
       color: var(--text);
-      font-family: 'Inter', sans-serif;
-      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23000000' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background-image: url("image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23000000' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
       background-size: 200px;
+      position: relative;
     }
-    header { padding:1.5rem 2.5rem; max-width:900px; margin:0 auto; display:flex; }
-    .back { text-decoration:none; color:var(--text); font-size:1.1rem; }
-    .back:hover { text-decoration:underline; }
-    .title { font-family:'Cormorant Garamond',serif; text-align:center; margin:2.5rem auto 1.8rem; font-size:2rem; max-width:900px; }
-    .tools { max-width:900px; margin:0 auto; padding:0 2rem 2rem; }
-    .item { background:var(--surface); border:1px solid var(--border); padding:1.4rem; margin-bottom:1.2rem; border-radius:4px; transition:all 0.25s; }
-    .item:hover { border-color:var(--hover); transform:translateX(4px); }
-    .item a { text-decoration:none; color:inherit; font-weight:500; display:block; }
-    .dice-wrapper { text-align:center; margin-top:2rem; }
-    .shaking { animation: shake 0.5s infinite; }
-    @keyframes shake {
-      0%,100% { transform: rotateX(0) rotateY(0) rotateZ(0); }
-      10% { transform: rotateX(10deg) rotateY(10deg) rotateZ(5deg); }
-      20% { transform: rotateX(-10deg) rotateY(-10deg) rotateZ(-5deg); }
-      30% { transform: rotateX(15deg) rotateY(15deg) rotateZ(10deg); }
-      40% { transform: rotateX(-15deg) rotateY(-15deg) rotateZ(-10deg); }
-      50% { transform: rotateX(20deg) rotateY(20deg) rotateZ(15deg); }
-      60% { transform: rotateX(-20deg) rotateY(-20deg) rotateZ(-15deg); }
-      70% { transform: rotateX(15deg) rotateY(15deg) rotateZ(10deg); }
-      80% { transform: rotateX(-10deg) rotateY(-10deg) rotateZ(-5deg); }
-      90% { transform: rotateX(5deg) rotateY(5deg) rotateZ(2deg); }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255,45,117,0.01) 2px, transparent 3px),
+        radial-gradient(circle at 90% 80%, rgba(74, 108, 247,0.01) 2px, transparent 3px);
+      pointer-events: none;
+      z-index: -1;
+    }
+    header {
+      padding: 1.5rem 2.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .back {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .back:hover {
+      color: var(--hover);
+      text-decoration: underline;
+    }
+    .title-wrapper {
+      width: 100%;
+      text-align: center;
+      margin: 2.5rem auto 1.8rem;
+      max-width: 900px;
+      position: relative;
+    }
+    .title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .title-underline {
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 12px;
+      z-index: 0;
+    }
+    .tools {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem 2rem;
+    }
+    .item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.4rem;
+      margin-bottom: 1.2rem;
+      border-radius: 4px;
+      transition: all 0.25s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      position: relative;
+      overflow: hidden;
+    }
+    .dark .item {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .item::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,45,117,0.04), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.6s;
+      z-index: 0;
+    }
+    .item:hover::after {
+      transform: translateX(100%);
+    }
+    .item * {
+      position: relative;
+      z-index: 1;
+    }
+    .item:hover {
+      border-color: var(--hover);
+      transform: translateX(4px);
+    }
+    .item a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: 500;
+      display: block;
+    }
+    #dice .dice-wrapper {
+      background: var(--surface) !important;
+      color: var(--text) !important;
+      border: 1px solid var(--border) !important;
+    }
+    #dice select {
+      background: var(--surface) !important;
+      color: var(--text) !important;
+      border: 1px solid var(--border) !important;
+    }
+    #dice h3, #dice label, #dice .result {
+      color: var(--text) !important;
+    }
+    @media (max-width: 768px) {
+      header { padding: 1.2rem; }
+      .title { font-size: 1.8rem; }
     }
   </style>
 </head>
 <body>
-  <header><a href="../" class="back">← Back to Home</a></header>
-  <h1 class="title">2. Time Tools · 時時很Happy</h1>
-  <div class="tools">
-    <div class="item"><a href="https://ducj-creator.github.io/Shirley%20Timer.html">2.1 Shirley's Timer</a></div>
-    <div class="item"><a href="https://ducj-creator.github.io/Shirley%20Stop%20Watch.html">2.2 Shirley's Stop Watch</a></div>
-    <div class="item"><a href="#dice">2.3 Shirley's Dice Simulator</a></div>
+  <header>
+    <a href="/shirley-secret-tools/" class="back">← Back to Home</a>
+  </header>
+
+  <div class="title-wrapper">
+    <h1 class="title">2. Time Tools · 時時很Happy</h1>
+    <svg class="title-underline" viewBox="0 0 200 20" preserveAspectRatio="none">
+      <path d="M0,15 Q50,5 100,15 T200,15" stroke="#ff2d75" fill="none" stroke-width="2" opacity="0.6"/>
+    </svg>
   </div>
 
-  <div class="dice-wrapper">
-    <h2 style="font-family:'Cormorant Garamond',serif;color:var(--text);">2.3 Shirley's Dice Simulator</h2>
-    <div style="display:flex;justify-content:center;">
-      <div style="padding:2rem;background:var(--surface);border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.1);max-width:400px;width:90%;">
-        <div class="dice-container" id="diceContainer" style="perspective:1000px;margin:2rem auto;width:150px;height:150px;cursor:pointer;">
-          <div class="dice" id="dice" style="width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform 0.5s ease;">
-            <div class="face" style="position:absolute;width:100%;height:100%;background:#FF5252;border:2px solid #333;border-radius:15px;display:flex;justify-content:center;align-items:center;transform:translateZ(75px);"><div style="width:25px;height:25px;background:#333;border-radius:50%;"></div></div>
-            <div class="face" style="position:absolute;width:100%;height:100%;background:#4CAF50;border:2px solid #333;border-radius:15px;transform:rotateY(90deg) translateZ(75px);"><div style="position:absolute;top:25%;left:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;bottom:25%;right:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div></div>
-            <div class="face" style="position:absolute;width:100%;height:100%;background:#2196F3;border:2px solid #333;border-radius:15px;transform:rotateX(90deg) translateZ(75px);"><div style="position:absolute;top:25%;left:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;bottom:25%;right:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div></div>
-            <div class="face" style="position:absolute;width:100%;height:100%;background:#FFC107;border:2px solid #333;border-radius:15px;transform:rotateX(-90deg) translateZ(75px);"><div style="position:absolute;top:25%;left:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;top:25%;right:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;bottom:25%;left:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;bottom:25%;right:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div></div>
-            <div class="face" style="position:absolute;width:100%;height:100%;background:#9C27B0;border:2px solid #333;border-radius:15px;transform:rotateY(-90deg) translateZ(75px);"><div style="position:absolute;top:25%;left:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;top:25%;right:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;bottom:25%;left:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;bottom:25%;right:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div></div>
-            <div class="face" style="position:absolute;width:100%;height:100%;background:#FF9800;border:2px solid #333;border-radius:15px;transform:rotateY(180deg) translateZ(75px);"><div style="position:absolute;top:25%;left:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;top:25%;right:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;top:50%;left:25%;transform:translateY(-50%);width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;top:50%;right:25%;transform:translateY(-50%);width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;bottom:25%;left:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div><div style="position:absolute;bottom:25%;right:25%;width:25px;height:25px;background:#333;border-radius:50%;"></div></div>
+  <div class="tools">
+    <div class="item">
+      <a href="https://ducj-creator.github.io/Shirley%20Timer.html">2.1 Shirley's Timer</a>
+    </div>
+    <div class="item">
+      <a href="https://ducj-creator.github.io/Shirley%20Stop%20Watch.html">2.2 Shirley's Stop Watch</a>
+    </div>
+    <div class="item">
+      <a href="#dice">2.3 Shirley's Dice Simulator</a>
+    </div>
+  </div>
+
+  <!-- ✅ 新版 Dice 工具（完整支援 d4/d6/d8/d10/d12/d20） -->
+  <div id="dice" style="margin-top: 3rem; max-width: 900px; padding: 0 2rem;">
+    <div style="display:flex; justify-content:center; margin-top:2rem;">
+      <div class="dice-wrapper" style="text-align:center; padding:2rem; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1); max-width:400px; width:90%;">
+        <h3 style="margin-bottom:1rem;">Shirley's Dice Simulator</h3>
+
+        <div style="margin-bottom:1rem;">
+          <label for="diceType" style="display:block; margin-bottom:0.5rem;">Choose Dice:</label>
+          <select id="diceType" style="padding:0.4rem; border-radius:8px; border:1px solid #ccc; width:100%;">
+            <option value="4">d4 (4-sided)</option>
+            <option value="6" selected>d6 (6-sided)</option>
+            <option value="8">d8 (8-sided)</option>
+            <option value="10">d10 (10-sided)</option>
+            <option value="12">d12 (12-sided)</option>
+            <option value="20">d20 (20-sided)</option>
+          </select>
+        </div>
+
+        <div class="dice-container" id="diceContainer" style="perspective:1000px; margin:1.5rem auto; width:150px; height:150px; cursor:pointer;">
+          <div class="dice" id="dice-inner" style="width:100%; height:100%; position:relative; transform-style:preserve-3d; transition:transform 0.5s ease;">
+            <!-- Faces injected by JS -->
           </div>
         </div>
-        <div class="result" id="result" style="font-size:1.4rem;margin-top:1.5rem;color:var(--text);">Click to roll</div>
+        <div class="result" id="result" style="font-size:1.4rem; margin-top:1.5rem;">Click to roll</div>
       </div>
     </div>
   </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const dice = document.getElementById('dice');
+      const dice = document.getElementById('dice-inner');
       const result = document.getElementById('result');
       const container = document.getElementById('diceContainer');
+      const diceTypeSelect = document.getElementById('diceType');
       let rolling = false;
       const ctx = new (window.AudioContext || window.webkitAudioContext)();
+
       function playSound() {
         const o = ctx.createOscillator(), g = ctx.createGain();
         o.connect(g); g.connect(ctx.destination);
-        o.type = 'sine'; o.frequency.setValueAtTime(440, ctx.currentTime);
+        o.type = 'sine';
+        o.frequency.setValueAtTime(440, ctx.currentTime);
         o.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.1);
         g.gain.setValueAtTime(0.3, ctx.currentTime);
         g.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.2);
         o.start(); o.stop(ctx.currentTime + 0.2);
       }
-      container.addEventListener('click', () => {
+
+      function generateD6Faces() {
+        dice.innerHTML = '';
+        const half = 75;
+        const faces = [
+          { n: 1, color: '#FF5252', dots: [[50,50]] },
+          { n: 2, color: '#4CAF50', dots: [[25,25],[75,75]] },
+          { n: 3, color: '#2196F3', dots: [[25,25],[50,50],[75,75]] },
+          { n: 4, color: '#FFC107', dots: [[25,25],[25,75],[75,25],[75,75]] },
+          { n: 5, color: '#9C27B0', dots: [[25,25],[25,75],[75,25],[75,75],[50,50]] },
+          { n: 6, color: '#00BCD4', dots: [[25,20],[25,50],[25,80],[75,20],[75,50],[75,80]] }
+        ];
+        const transforms = [
+          `translateZ(${half}px)`,
+          `rotateY(90deg) translateZ(${half}px)`,
+          `rotateX(90deg) translateZ(${half}px)`,
+          `rotateX(-90deg) translateZ(${half}px)`,
+          `rotateY(-90deg) translateZ(${half}px)`,
+          `rotateY(180deg) translateZ(${half}px)`
+        ];
+        faces.forEach((f, i) => {
+          const face = document.createElement('div');
+          face.style.cssText = `position:absolute;width:100%;height:100%;background:${f.color};border:2px solid #333;border-radius:15px;display:flex;justify-content:center;align-items:center;transform:${transforms[i]};`;
+          f.dots.forEach(([x,y]) => {
+            const dot = document.createElement('div');
+            dot.style.cssText = `position:absolute;width:25px;height:25px;background:#333;border-radius:50%;left:${x}%;top:${y}%;transform:translate(-50%,-50%);`;
+            if (f.n === 6 && (x === 25 || x === 75) && y !== 50) {
+              dot.style.transform = 'translate(-50%,-50%)';
+            }
+            face.appendChild(dot);
+          });
+          dice.appendChild(face);
+        });
+      }
+
+      function generateSingleFaceDice(sides) {
+        dice.innerHTML = '';
+        const face = document.createElement('div');
+        face.className = 'face front';
+        face.style.cssText = `position:absolute;width:100%;height:100%;display:flex;justify-content:center;align-items:center;font-size:32px;font-weight:bold;transform:translateZ(75px);`;
+        face.textContent = '?';
+        if (sides === 4) {
+          face.style.cssText += `clip-path:polygon(50% 0%, 0% 100%, 100% 100%);background:linear-gradient(135deg, #FF5252, #D32F2F);color:#fff;`;
+        } else if (sides === 8) {
+          face.style.cssText += `clip-path:polygon(50% 0%, 0% 100%, 100% 100%);background:linear-gradient(135deg, #2196F3, #0D47A1);color:#fff;`;
+        } else if (sides === 10) {
+          face.style.cssText += `clip-path:polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);background:linear-gradient(135deg, #FFC107, #FF8F00);color:#000;`;
+        } else if (sides === 12) {
+          face.style.cssText += `clip-path:polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);background:linear-gradient(135deg, #616161, #212121);color:#FFD700;`;
+        } else if (sides === 20) {
+          face.style.cssText += `clip-path:polygon(50% 0%, 0% 100%, 100% 100%);background:linear-gradient(135deg, #9C27B0, #4A148C);color:#fff;`;
+        }
+        dice.appendChild(face);
+      }
+
+      function rollDice(sides) {
         if (rolling) return;
         rolling = true;
         result.textContent = "Rolling...";
         dice.classList.add('shaking');
         playSound();
         setTimeout(() => {
-          const n = Math.floor(Math.random() * 6) + 1;
-          result.textContent = `Result: ${n}`;
+          const n = Math.floor(Math.random() * sides) + 1;
+          if (sides === 6) {
+            dice.style.transform = ({1:'rotateX(0deg) rotateY(0deg)',2:'rotateY(-90deg)',3:'rotateX(-90deg)',4:'rotateX(90deg)',5:'rotateY(90deg)',6:'rotateY(180deg)'})[n];
+            result.textContent = `Result: ${n}`;
+          } else {
+            const front = dice.querySelector('.front');
+            if (front) front.textContent = n;
+            const rx = (Math.random() * 40 - 20);
+            const ry = (Math.random() * 40 - 20);
+            dice.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+            result.textContent = `Result: ${n}`;
+          }
           dice.classList.remove('shaking');
-          dice.style.transform = ({
-            1: 'rotateX(0deg) rotateY(0deg)',
-            2: 'rotateY(-90deg)',
-            3: 'rotateX(-90deg)',
-            4: 'rotateX(90deg)',
-            5: 'rotateY(90deg)',
-            6: 'rotateY(180deg)'
-          })[n];
           rolling = false;
         }, 800);
-      });
+      }
+
+      generateD6Faces();
       dice.style.transform = 'rotateX(0deg) rotateY(0deg)';
+
+      diceTypeSelect.addEventListener('change', function() {
+        const sides = parseInt(this.value);
+        if (sides === 6) {
+          generateD6Faces();
+          dice.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        } else {
+          generateSingleFaceDice(sides);
+          dice.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        }
+        result.textContent = "Click to roll";
+      });
+
+      container.addEventListener('click', () => {
+        const sides = parseInt(diceTypeSelect.value);
+        rollDice(sides);
+      });
     });
+  </script>
+
+  <style>
+    .shaking {
+      animation: shake 0.5s infinite;
+    }
+    @keyframes shake {
+      0%,100% { transform: rotateX(0) rotateY(0) rotateZ(0); }
+      25% { transform: rotateX(10deg) rotateY(10deg) rotateZ(5deg); }
+      50% { transform: rotateX(-10deg) rotateY(-10deg) rotateZ(-5deg); }
+      75% { transform: rotateX(5deg) rotateY(5deg) rotateZ(2deg); }
+    }
+  </style>
+
+  <script>
+    const html = document.getElementById('htmlRoot');
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') html.classList.add('dark');
   </script>
 </body>
 </html>
