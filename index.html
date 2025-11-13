@@ -30,7 +30,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       background-color: var(--bg);
-      color: var(--text);
+      color: var(--text, #1a1a1a); /* 🔧 安全 fallback */
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
       line-height: 1.7;
       transition: background-color 0.3s, color 0.3s;
@@ -39,35 +39,11 @@
       position: relative;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-image: 
-        radial-gradient(circle at 10% 20%, rgba(255,45,117,0.01) 2px, transparent 3px),
-        radial-gradient(circle at 90% 80%, rgba(74, 108, 247,0.01) 2px, transparent 3px);
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    /* 🎆 煙火 */
-    .firework {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 9999;
-      opacity: 0;
-    }
-
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 2rem 2.5rem;
+      padding: 1.5rem 2.5rem;
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -79,11 +55,10 @@
 
     .title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       font-weight: 600;
       letter-spacing: -0.5px;
-      position: relative;
-      z-index: 1;
+      color: var(--text, #1a1a1a);
     }
 
     .title-underline {
@@ -105,7 +80,7 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      color: var(--text);
+      color: var(--text, #1a1a1a);
       font-size: 1.3rem;
       transition: all 0.3s, transform 0.2s;
     }
@@ -117,98 +92,93 @@
     .dark #themeToggle {
       color: #ff6f91;
     }
-<div class="intro" style="max-width: 800px; margin: 0 auto 3rem; padding: 0 2rem; text-align: center; position: relative;">
-  <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; margin-bottom: 1.2rem; color: #1a1a1a; position: relative; display: inline-block;">
-    Welcome to <span style="background: linear-gradient(90deg, #ff2d75, #4a6cf7); -webkit-background-clip: text; background-clip: text; color: transparent;">Shirley & Her Language Teaching</span>
-  </div>
-  <div style="width: 80px; height: 4px; background: linear-gradient(to right, #ff2d75, #4a6cf7); margin: 0 auto 1.4rem; border-radius: 2px;"></div>
-  <p style="font-size: 1.05rem; line-height: 1.7; color: #555; margin: 0;">
-    A joyful, interactive toolkit for teachers and learners — where vocabulary meets games, practice meets play, and every lesson feels a little magical. 💖
-  </p>
-</div>
+
+    /* Intro Text */
+    .intro {
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+    .intro-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--text, #1a1a1a);
+    }
+    .intro-line {
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right, #ff2d75, #4a6cf7);
+      margin: 0 auto 1.2rem;
+      border-radius: 2px;
+    }
+    .intro-desc {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--text-light, #555);
+    }
+
+    /* Categories: 3 per row on desktop */
     .categories {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2.2rem;
-      padding: 1rem 2.5rem 4rem;
+      padding: 0 2.5rem 3rem;
       max-width: 1200px;
       margin: 0 auto;
+      width: 100%;
     }
 
     .category-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 2.2rem 1.8rem;
+      padding: 2rem;
       text-align: center;
       text-decoration: none;
       display: block;
       color: inherit;
-      transition: all 0.35s ease;
-      position: relative;
-      overflow: hidden;
+      transition: all 0.3s ease;
       box-shadow: 0 4px 12px rgba(0,0,0,0.04);
     }
     .dark .category-card {
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
-
-    .category-card::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255,45,117,0.05), transparent);
-      transform: translateX(-100%);
-      transition: transform 0.6s;
-      z-index: 0;
-    }
-    .category-card:hover::after {
-      transform: translateX(100%);
-    }
-
     .category-card:hover {
-      transform: translateY(-6px) scale(1.02);
+      transform: translateY(-4px);
       border-color: var(--hover);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
 
     .icon {
-      font-size: 2.6rem;
-      margin-bottom: 1.4rem;
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
       display: block;
-      transition: transform 0.4s ease;
-    }
-    .category-card:hover .icon {
-      animation: float 1.8s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-14px) rotate(6deg); }
     }
 
     .category-card h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.6rem;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
+      color: var(--text, #1a1a1a);
     }
     .category-card .subtitle {
       font-size: 1.05rem;
-      color: var(--text-light);
-      font-weight: 300;
+      color: var(--text-light, #555);
     }
 
     @media (max-width: 768px) {
-      header { padding: 1.5rem; }
-      .categories { padding: 0 1.2rem 2.5rem; }
-      .title { font-size: 2.1rem; }
+      .categories {
+        grid-template-columns: 1fr;
+        padding: 0 1.5rem 2.5rem;
+      }
+      .title { font-size: 2.0rem; }
+      .intro-title { font-size: 1.6rem; }
     }
   </style>
 </head>
 <body>
-  <div class="firework" id="firework"></div>
-
   <header>
     <div class="title-wrapper">
       <div class="title">Shirley & Her Language Teaching</div>
@@ -219,6 +189,16 @@
     <button id="themeToggle" aria-label="Toggle theme">💖</button>
   </header>
 
+  <!-- ✅ 簡短介紹 -->
+  <div class="intro">
+    <div class="intro-title">Welcome to Shirley & Her Language Teaching</div>
+    <div class="intro-line"></div>
+    <p class="intro-desc">
+      A joyful, interactive toolkit for teachers and learners — where vocabulary meets games, practice meets play, and every lesson feels a little magical. 💖
+    </p>
+  </div>
+
+  <!-- ✅ 8 個板塊（電腦版一行三塊） -->
   <div class="categories">
     <a href="/shirley-secret-tools/name-tools/" class="category-card">
       <span class="icon">🍀</span>
@@ -263,47 +243,6 @@
   </div>
 
   <script>
-    // 🎆 煙火效果
-    function createFirework() {
-      const firework = document.getElementById('firework');
-      firework.style.opacity = '1';
-      firework.innerHTML = '';
-      for (let i = 0; i < 35; i++) {
-        const spark = document.createElement('div');
-        spark.style.position = 'absolute';
-        spark.style.width = '5px';
-        spark.style.height = '5px';
-        spark.style.borderRadius = '50%';
-        spark.style.backgroundColor = `hsl(${Math.random() * 60 + 300}, 80%, 60%)`;
-        spark.style.left = '50%';
-        spark.style.top = '50%';
-        spark.style.transform = 'translate(-50%, -50%)';
-        spark.style.boxShadow = '0 0 10px currentColor';
-        firework.appendChild(spark);
-
-        const angle = Math.random() * Math.PI * 2;
-        const distance = 60 + Math.random() * 120;
-        const duration = 0.9 + Math.random() * 0.6;
-
-        spark.animate([
-          { transform: 'translate(-50%, -50%) scale(1)', opacity: 1 },
-          { transform: `translate(calc(-50% + ${Math.cos(angle) * distance}px), calc(-50% + ${Math.sin(angle) * distance}px)) scale(0)`, opacity: 0 }
-        ], {
-          duration: duration * 1000,
-          easing: 'cubic-bezier(0, .9, .57, 1)',
-          fill: 'forwards'
-        });
-      }
-      setTimeout(() => {
-        firework.style.opacity = '0';
-      }, 1800);
-    }
-
-    window.addEventListener('load', () => {
-      setTimeout(createFirework, 400);
-    });
-
-    // 暗色模式
     const html = document.getElementById('htmlRoot');
     const toggleBtn = document.getElementById('themeToggle');
     const savedTheme = localStorage.getItem('theme') || 'light';
