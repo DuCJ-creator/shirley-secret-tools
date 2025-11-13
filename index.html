@@ -7,6 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- ✅ Favicon: 內嵌 SVG，無需外部檔案 -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23faf9f6'/%3E%3Ctext x='16' y='20' font-family='Cormorant Garamond, serif' font-size='18' text-anchor='middle' fill='%231a1a1a'%3ES%3C/text%3E%3C/svg%3E" type="image/svg+xml">
   <style id="themeStyles">
     :root {
       --bg: #faf9f6;
@@ -30,7 +32,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       background-color: var(--bg);
-      color: var(--text, #1a1a1a); /* 🔧 安全 fallback */
+      color: var(--text, #1a1a1a);
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
       line-height: 1.7;
       transition: background-color 0.3s, color 0.3s;
@@ -93,7 +95,7 @@
       color: #ff6f91;
     }
 
-    /* Intro Text */
+    /* Intro */
     .intro {
       max-width: 800px;
       margin: 0 auto 2.5rem;
@@ -119,12 +121,12 @@
       color: var(--text-light, #555);
     }
 
-    /* Categories: 3 per row on desktop */
+    /* Categories: 3 per row */
     .categories {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2.2rem;
-      padding: 0 2.5rem 3rem;
+      padding: 0 2.5rem 2rem;
       max-width: 1200px;
       margin: 0 auto;
       width: 100%;
@@ -168,11 +170,34 @@
       color: var(--text-light, #555);
     }
 
+    /* Visitor Counter */
+    .counter {
+      text-align: center;
+      padding: 0.8rem;
+      color: var(--text-light, #555);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border);
+      margin: 0 auto 2rem;
+      max-width: 1200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: var(--text-light, #555);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border);
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+
     @media (max-width: 768px) {
-      .categories {
-        grid-template-columns: 1fr;
-        padding: 0 1.5rem 2.5rem;
-      }
+      .categories { grid-template-columns: 1fr; padding: 0 1.5rem 2rem; }
       .title { font-size: 2.0rem; }
       .intro-title { font-size: 1.6rem; }
     }
@@ -189,7 +214,6 @@
     <button id="themeToggle" aria-label="Toggle theme">💖</button>
   </header>
 
-  <!-- ✅ 簡短介紹 -->
   <div class="intro">
     <div class="intro-title">Welcome to Shirley & Her Language Teaching</div>
     <div class="intro-line"></div>
@@ -198,51 +222,74 @@
     </p>
   </div>
 
-  <!-- ✅ 8 個板塊（電腦版一行三塊） -->
   <div class="categories">
     <a href="/shirley-secret-tools/name-tools/" class="category-card">
       <span class="icon">🍀</span>
       <h2>1. Name Tools</h2>
-      <div class="subtitle">名名Lucky</div>
+      <div class="subtitle">名名很Lucky</div>
     </a>
     <a href="/shirley-secret-tools/time-tools/" class="category-card">
       <span class="icon">⏳</span>
       <h2>2. Time Tools</h2>
-      <div class="subtitle">時時Zippy</div>
+      <div class="subtitle">時時很Happy</div>
     </a>
     <a href="/shirley-secret-tools/fun-games/" class="category-card">
       <span class="icon">🎲</span>
       <h2>3. Fun Games</h2>
-      <div class="subtitle">遊遊Jolly</div>
+      <div class="subtitle">遊遊很Jolly</div>
     </a>
     <a href="/shirley-secret-tools/self-practice/" class="category-card">
       <span class="icon">📒</span>
       <h2>4. Self-Practice</h2>
-      <div class="subtitle">練練Steady</div>
+      <div class="subtitle">練練很Easy</div>
     </a>
     <a href="/shirley-secret-tools/quiz-worksheets/" class="category-card">
       <span class="icon">✏️</span>
       <h2>5. Quiz/Worksheets</h2>
-      <div class="subtitle">考考Handy</div>
+      <div class="subtitle">考考很Handy</div>
     </a>
     <a href="/shirley-secret-tools/grade-analysis/" class="category-card">
       <span class="icon">📈</span>
       <h2>6. Grade Analysis</h2>
-      <div class="subtitle">分分Worthy</div>
+      <div class="subtitle">分分很Worthy</div>
     </a>
     <a href="/shirley-secret-tools/external-resources/" class="category-card">
       <span class="icon">🌐</span>
       <h2>7. External Resources</h2>
-      <div class="subtitle">源源Ready</div>
+      <div class="subtitle">源源很Ready</div>
     </a>
     <a href="/shirley-secret-tools/ivocab-challenge/" class="category-card">
       <span class="icon">🔤</span>
       <h2>8. iVocab Challenge</h2>
-      <div class="subtitle">字字Speedy</div>
+      <div class="subtitle">字字很Speedy</div>
     </a>
   </div>
 
+  <!-- ✅ 訪問量計數器 -->
+  <div class="counter">
+    <span>👁️</span>
+    <span id="page-counter">Loading...</span>
+    <span>visits</span>
+  </div>
+
+  <!-- ✅ 頁尾版權 -->
+  <footer>
+    © 2025 Shirley’s Language Teaching. All rights reserved.
+  </footer>
+
   <script>
+    // 主頁計數器
+    const counterElement = document.getElementById('page-counter');
+    fetch('https://api.countapi.xyz/hit/shirley_secret_tools/homepage')
+      .then(res => res.json())
+      .then(data => {
+        counterElement.textContent = data.value.toLocaleString();
+      })
+      .catch(() => {
+        counterElement.textContent = '—';
+      });
+
+    // 暗色模式
     const html = document.getElementById('htmlRoot');
     const toggleBtn = document.getElementById('themeToggle');
     const savedTheme = localStorage.getItem('theme') || 'light';
