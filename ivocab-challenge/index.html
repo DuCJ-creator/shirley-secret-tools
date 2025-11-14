@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>8. iVocab Challenge · Shirley's Secret Tools</title>
+  <title> Vocab Challenge · Shirley's Secret Tools</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -96,6 +96,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.04);
       position: relative;
       overflow: hidden;
+      cursor: pointer;
     }
     .dark .item {
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -127,6 +128,61 @@
       font-weight: 500;
       display: block;
     }
+
+    /* Pills for Level / Units */
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+    .pill {
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .pill:hover {
+      border-color: var(--hover);
+      transform: translateY(-1px);
+    }
+    .pill.selected {
+      background: var(--hover);
+      color: #fff;
+      border-color: var(--hover);
+    }
+    .step-label {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      color: var(--text-light);
+    }
+    .btn-next {
+      margin-top: 0.5rem;
+      padding: 0.5rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      background: var(--text);
+      color: #fff;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn-next:hover {
+      background: var(--hover);
+      transform: translateY(-1px);
+    }
+    .hint {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-top: 0.3rem;
+    }
+    .hidden {
+      display: none;
+    }
+
     @media (max-width: 768px) {
       header { padding: 1.2rem; }
       .title { font-size: 1.8rem; }
@@ -135,91 +191,216 @@
   </style>
 </head>
 <body>
-  <header>
-    <a href="/shirley-secret-tools/" class="back">← Back to Home</a>
-  </header>
 
   <div class="title-wrapper">
-    <h1 class="title">8. iVocab Challenge · 字字Speedy</h1>
+    <h1 class="title"> Vocab Challenge · 單字Speedy大挑戰</h1>
     <svg class="title-underline" viewBox="0 0 200 20" preserveAspectRatio="none">
       <path d="M0,15 Q50,5 100,15 T200,15" stroke="#ff2d75" fill="none" stroke-width="2" opacity="0.6"/>
     </svg>
   </div>
 
-  <!-- Senior Levels -->
+  <!-- Home: Category Selection -->
   <div class="section">
-    <h2 class="section-title">1. Senior (6 Levels)</h2>
-    
-    <h3 class="section-title" style="font-size:1.3rem; margin-top:1.5rem;">1.1 Level 1</h3>
+    <h2 class="section-title">Choose Category</h2>
     <div class="tools">
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L1%20U1-10.html" target="_blank">L1 U1-10</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L1%20U11-20.html" target="_blank">L1 U11-20</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L1%20U21-30.html" target="_blank">L1 U21-30</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L1%20U31-40.html" target="_blank">L1 U31-40</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L1%20U41-50.html" target="_blank">L1 U41-50</a></div>
-    </div>
-
-    <h3 class="section-title" style="font-size:1.3rem; margin-top:1.5rem;">1.2 Level 2</h3>
-    <div class="tools">
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L2%20U%201-10.html" target="_blank">L2 U1-10</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L2%20U11-20.html" target="_blank">L2 U11-20</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L2%20U21-30.html" target="_blank">L2 U21-30</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L2%20U31-40.html" target="_blank">L2 U31-40</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L2%20U41-50.html" target="_blank">L2 U41-50</a></div>
-    </div>
-
-    <h3 class="section-title" style="font-size:1.3rem; margin-top:1.5rem;">1.3 Level 3</h3>
-    <div class="tools">
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L3%20U1-10.html" target="_blank">L3 U1-10</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L3%20U11-20.html" target="_blank">L3 U11-20</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L3%20U21-30.html" target="_blank">L3 U21-30</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L3%20U31-40.html" target="_blank">L3 U31-40</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L3%20U41-50.html" target="_blank">L3 U41-50</a></div>
-    </div>
-
-    <h3 class="section-title" style="font-size:1.3rem; margin-top:1.5rem;">1.4 Level 4</h3>
-    <div class="tools">
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L4%20U1-10.html" target="_blank">L4 U1-10</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L4%20U11-20.html" target="_blank">L4 U11-20</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L4%20U21-30.html" target="_blank">L4 U21-30</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L4%20U31-40.html" target="_blank">L4 U31-40</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L4%20U41-50.html" target="_blank">L4 U41-50</a></div>
-    </div>
-
-    <h3 class="section-title" style="font-size:1.3rem; margin-top:1.5rem;">1.5 Level 5</h3>
-    <div class="tools">
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L5%20U1-10.html" target="_blank">L5 U1-10</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L5%20U11-20.html" target="_blank">L5 U11-20</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L5%20U21-30.html" target="_blank">L5 U21-30</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L5%20U31-40.html" target="_blank">L5 U31-40</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L5%20U41-50.html" target="_blank">L5 U41-50</a></div>
-    </div>
-
-    <h3 class="section-title" style="font-size:1.3rem; margin-top:1.5rem;">1.6 Level 6</h3>
-    <div class="tools">
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L6%20U1-10.html" target="_blank">L6 U1-10</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L6%20U11-20.html" target="_blank">L6 U11-20</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L6%20U21-30.html" target="_blank">L6 U21-30</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L6%20U31-40.html" target="_blank">L6 U31-40</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/iVocab%20L6%20U41-50.html" target="_blank">L6 U41-50</a></div>
+      <div class="item" id="btnSenior">
+        <div style="font-size:1.2rem; font-weight:600; margin-bottom:0.4rem;">Senior</div>
+        <div style="font-size:0.95rem; color:var(--text-light);">
+          6 Levels · 50 Units per level · 兩步驟選擇 Level &amp; Units 開始遊戲
+        </div>
+      </div>
+      <div class="item" id="btnJunior">
+        <div style="font-size:1.2rem; font-weight:600; margin-bottom:0.4rem;">Junior CAP 2000</div>
+        <div style="font-size:0.95rem; color:var(--text-light);">
+          依主題分區：Clothing / Dining / Housing / Transport &amp; Others
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Junior CAP 2000 -->
-  <div class="section">
+  <!-- Senior Flow -->
+  <div class="section hidden" id="seniorPanel">
+    <h2 class="section-title">1. Senior (6 Levels)</h2>
+
+    <!-- Step 1: choose Level -->
+    <div style="margin-bottom:1.5rem;">
+      <div class="step-label">Step 1 · Choose Level (單選)</div>
+      <div class="pill-row" id="levelRow">
+        <button class="pill" data-level="1">Level 1</button>
+        <button class="pill" data-level="2">Level 2</button>
+        <button class="pill" data-level="3">Level 3</button>
+        <button class="pill" data-level="4">Level 4</button>
+        <button class="pill" data-level="5">Level 5</button>
+        <button class="pill" data-level="6">Level 6</button>
+      </div>
+      <button class="btn-next" id="btnToUnits">Next · 選 Units</button>
+      <div class="hint">請先選擇一個 Level，再按 Next。</div>
+    </div>
+
+    <!-- Step 2: choose Unit Range -->
+    <div id="unitStep" class="hidden">
+      <div class="step-label">Step 2 · Choose Unit Range</div>
+      <div class="pill-row" id="unitRow">
+        <button class="pill" data-range="1-10">Units 1–10</button>
+        <button class="pill" data-range="11-20">Units 11–20</button>
+        <button class="pill" data-range="21-30">Units 21–30</button>
+        <button class="pill" data-range="31-40">Units 31–40</button>
+        <button class="pill" data-range="41-50">Units 41–50</button>
+      </div>
+      <div class="hint">選好 Units 後，系統會自動開啟對應的遊戲頁面。</div>
+    </div>
+  </div>
+
+  <!-- Junior CAP 2000 (unchanged logic) -->
+  <div class="section hidden" id="juniorPanel">
     <h2 class="section-title">2. Junior CAP 2000</h2>
     <div class="tools">
-      <div class="item"><a href="https://ducj-creator.github.io/CAP2000%20Clothing.html" target="_blank">2.1 Clothing & Others</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/CAP2000%20Dining.html" target="_blank">2.2 Dining & Others</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/CAP2000%20Housing.html" target="_blank">2.3 Housing & Others</a></div>
-      <div class="item"><a href="https://ducj-creator.github.io/CAP2000%20Transport.html" target="_blank">2.4 Transport & Others</a></div>
+      <div class="item">
+        <a href="https://ducj-creator.github.io/CAP2000%20Clothing.html" target="_blank">
+          2.1 Clothing &amp; Others
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://ducj-creator.github.io/CAP2000%20Dining.html" target="_blank">
+          2.2 Dining &amp; Others
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://ducj-creator.github.io/CAP2000%20Housing.html" target="_blank">
+          2.3 Housing &amp; Others
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://ducj-creator.github.io/CAP2000%20Transport.html" target="_blank">
+          2.4 Transport &amp; Others
+        </a>
+      </div>
     </div>
   </div>
 
   <script>
+    // dark mode
     const html = document.getElementById('htmlRoot');
     const saved = localStorage.getItem('theme');
     if (saved === 'dark') html.classList.add('dark');
+
+    // Elements
+    const btnSenior = document.getElementById('btnSenior');
+    const btnJunior = document.getElementById('btnJunior');
+    const seniorPanel = document.getElementById('seniorPanel');
+    const juniorPanel = document.getElementById('juniorPanel');
+
+    const levelRow = document.getElementById('levelRow');
+    const unitRow = document.getElementById('unitRow');
+    const btnToUnits = document.getElementById('btnToUnits');
+    const unitStep = document.getElementById('unitStep');
+
+    let selectedLevel = null;
+
+    // Mapping: Level + Units -> URL (全部沿用原本的連結)
+    const seniorLinks = {
+      "1": {
+        "1-10": "https://ducj-creator.github.io/iVocab%20L1%20U1-10.html",
+        "11-20": "https://ducj-creator.github.io/iVocab%20L1%20U11-20.html",
+        "21-30": "https://ducj-creator.github.io/iVocab%20L1%20U21-30.html",
+        "31-40": "https://ducj-creator.github.io/iVocab%20L1%20U31-40.html",
+        "41-50": "https://ducj-creator.github.io/iVocab%20L1%20U41-50.html"
+      },
+      "2": {
+        "1-10": "https://ducj-creator.github.io/iVocab%20L2%20U%201-10.html",  // 注意原本這個多一個空白
+        "11-20": "https://ducj-creator.github.io/iVocab%20L2%20U11-20.html",
+        "21-30": "https://ducj-creator.github.io/iVocab%20L2%20U21-30.html",
+        "31-40": "https://ducj-creator.github.io/iVocab%20L2%20U31-40.html",
+        "41-50": "https://ducj-creator.github.io/iVocab%20L2%20U41-50.html"
+      },
+      "3": {
+        "1-10": "https://ducj-creator.github.io/iVocab%20L3%20U1-10.html",
+        "11-20": "https://ducj-creator.github.io/iVocab%20L3%20U11-20.html",
+        "21-30": "https://ducj-creator.github.io/iVocab%20L3%20U21-30.html",
+        "31-40": "https://ducj-creator.github.io/iVocab%20L3%20U31-40.html",
+        "41-50": "https://ducj-creator.github.io/iVocab%20L3%20U41-50.html"
+      },
+      "4": {
+        "1-10": "https://ducj-creator.github.io/iVocab%20L4%20U1-10.html",
+        "11-20": "https://ducj-creator.github.io/iVocab%20L4%20U11-20.html",
+        "21-30": "https://ducj-creator.github.io/iVocab%20L4%20U21-30.html",
+        "31-40": "https://ducj-creator.github.io/iVocab%20L4%20U31-40.html",
+        "41-50": "https://ducj-creator.github.io/iVocab%20L4%20U41-50.html"
+      },
+      "5": {
+        "1-10": "https://ducj-creator.github.io/iVocab%20L5%20U1-10.html",
+        "11-20": "https://ducj-creator.github.io/iVocab%20L5%20U11-20.html",
+        "21-30": "https://ducj-creator.github.io/iVocab%20L5%20U21-30.html",
+        "31-40": "https://ducj-creator.github.io/iVocab%20L5%20U31-40.html",
+        "41-50": "https://ducj-creator.github.io/iVocab%20L5%20U41-50.html"
+      },
+      "6": {
+        "1-10": "https://ducj-creator.github.io/iVocab%20L6%20U1-10.html",
+        "11-20": "https://ducj-creator.github.io/iVocab%20L6%20U11-20.html",
+        "21-30": "https://ducj-creator.github.io/iVocab%20L6%20U21-30.html",
+        "31-40": "https://ducj-creator.github.io/iVocab%20L6%20U31-40.html",
+        "41-50": "https://ducj-creator.github.io/iVocab%20L6%20U41-50.html"
+      }
+    };
+
+    // 顯示 / 隱藏 Senior / Junior 區塊
+    btnSenior.addEventListener('click', () => {
+      seniorPanel.classList.remove('hidden');
+      juniorPanel.classList.add('hidden');
+      seniorPanel.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    btnJunior.addEventListener('click', () => {
+      juniorPanel.classList.remove('hidden');
+      seniorPanel.classList.add('hidden');
+      juniorPanel.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Step 1: 選 Level (單選)
+    levelRow.addEventListener('click', (e) => {
+      const btn = e.target.closest('.pill');
+      if (!btn) return;
+      const level = btn.getAttribute('data-level');
+      if (!level) return;
+
+      // 清空其他選擇
+      levelRow.querySelectorAll('.pill').forEach(p => p.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedLevel = level;
+
+      // 一旦改 Level，把 Step2 隱藏、取消 Units 選擇，避免誤選
+      unitStep.classList.add('hidden');
+      unitRow.querySelectorAll('.pill').forEach(p => p.classList.remove('selected'));
+    });
+
+    // Next → 顯示 Unit 選擇
+    btnToUnits.addEventListener('click', () => {
+      if (!selectedLevel) {
+        alert('請先選擇一個 Level。');
+        return;
+      }
+      unitStep.classList.remove('hidden');
+      unitStep.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Step 2: 選 Units → 直接開啟對應遊戲
+    unitRow.addEventListener('click', (e) => {
+      const btn = e.target.closest('.pill');
+      if (!btn) return;
+      const range = btn.getAttribute('data-range');
+      if (!range || !selectedLevel) return;
+
+      // 單選效果
+      unitRow.querySelectorAll('.pill').forEach(p => p.classList.remove('selected'));
+      btn.classList.add('selected');
+
+      const url = seniorLinks[selectedLevel] && seniorLinks[selectedLevel][range];
+      if (!url) {
+        alert('找不到對應的遊戲連結，請再試一次或聯絡老師。');
+        return;
+      }
+      window.open(url, '_blank');
+    });
   </script>
 </body>
 </html>
